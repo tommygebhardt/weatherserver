@@ -1,0 +1,17 @@
+from django.shortcuts import render
+from django.http import HttpResponse
+# Create your views here.
+
+def index(request):
+    all_nodes = node.objects.order_by('node_id')
+    output = ', '.join([n.Name for n in all_nodes])
+    return HttpResponse(output)
+
+def detail(request, node_id):
+    return HttpResponse("You're loking at node %s." % node_id)
+
+def results(request, node_id):
+    return HttpResponse("you're looking at the results of node %s." % node_id)
+
+def submit(request):
+    return HttpResponse("You're submitting data.")
