@@ -1,0 +1,11 @@
+<h1>{{ Node.Name }}</h1>
+<ul>
+  <li> Node ID = {{Node.id}} </li>
+  <li> IP Address = {{Node.IP}} </li>
+</ul>
+
+<h2>Reports</h2>
+  {% for report in Node.report_set.all %}
+    {{ report.Time }} - Temperature:{{report.Temp}} F Humidity:{{report.Humd}}%<br>
+  {% endfor %}
+</ul>

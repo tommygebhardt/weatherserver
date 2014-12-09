@@ -8,12 +8,13 @@ class node(models.Model):
     def __unicode__(self):
         return self.Name
 
-class report(models.Model):
+class weather(models.Model):
     Node = models.ForeignKey(node)
     Time = models.DateTimeField('time taken')
-    TimeReceived = models.DateTimeField('time received', auto_now_add=True)
-    Temp = models.FloatField('Temperature')
-    Humd = models.FloatField('Humidity')
+    TimeReceived = models.DateTimeField('time received')
+    Temp = models.FloatField()
+    Humd = models.FloatField()
     
     def __unicode__(self):
-        return (self.Time.isoformat(' '))
+        return self.Time
+    
