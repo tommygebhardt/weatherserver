@@ -61,10 +61,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'weather_db.sqlite3'),
-        'USER': 'user'
-        'PASSWORD': 'user'
-        'HOST': '127.0.0.1'
-        'PORT': '8000'
+#        'USER': 'postgres',
+#        'PASSWORD': '',
+#        'HOST': '127.0.0.1',
+#        'PORT': '8000',
     }
 }
 
@@ -86,21 +86,21 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
-
-# Parse database configuration from $DATABASE_URL
-DATABASES['default'] =  dj_database_url.config()
-
-# Honor the 'X-Forwarded-Proto' header for request.is_secure()
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
-# Allow all host headers
-ALLOWED_HOSTS = ['*']
-
-# Static asset configuration
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = 'staticfiles'
-STATIC_URL = '/static/'
-
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
+#
+## Parse database configuration from $DATABASE_URL
+#DATABASES['default'] =  dj_database_url.config()
+#
+## Honor the 'X-Forwarded-Proto' header for request.is_secure()
+#SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+#
+## Allow all host headers
+#ALLOWED_HOSTS = ['*']
+#
+## Static asset configuration
+#BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+#STATIC_ROOT = 'staticfiles'
+#STATIC_URL = '/static/'
+#
+#STATICFILES_DIRS = (
+#    os.path.join(BASE_DIR, 'static'),
+#)

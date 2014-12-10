@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
-from weather.models import node, weather
+from weather.models import node, report
 # Create your views here.
 
 def index(request):
@@ -20,7 +20,7 @@ def submit(request):
     except (KeyError, NodeID.DoesNotExist):
         return(request, 'weather/detail.html', {'error_mesage':"The node is not in the table"})
     else:
-        r = n.nodeID_set.create(Time=request.POST['Time'], TimeReceived=timezone.now(),\
+        r = n.report_set.create(Time=request.POST['Time'], TimeReceived=timezone.now(),\
                                 Temp=request.POST['Temp'], Humd=request.POST['Humdity'])
 
         return HttpResponse('Submitted. Thanks!')
