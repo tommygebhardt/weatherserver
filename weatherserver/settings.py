@@ -57,12 +57,16 @@ WSGI_APPLICATION = 'weatherserver.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.postgresql_psycopg2'
-#        'NAME': os.path.join(BASE_DIR, 'weather_db.sqlite3'),
-#    }
-#}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2'
+        'NAME': os.path.join(BASE_DIR, 'weather_db.sqlite3'),
+        'USER': 'user'
+        'PASSWORD': 'user'
+        'HOST': '127.0.0.1'
+        'PORT': '8000'
+    }
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
